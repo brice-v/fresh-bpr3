@@ -1,5 +1,5 @@
 import { MiddlewareHandlerContext } from "$fresh/server.ts";
-import { getCookies, getSetCookies } from "std/http/cookie.ts";
+import { getCookies } from "std/http/cookie.ts";
 import { getBaseUrl } from "../utils/utils.ts";
 import { isValidUser } from "../utils/db.ts";
 
