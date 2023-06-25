@@ -10,8 +10,6 @@ export async function handler(req: Request, ctx: MiddlewareHandlerContext) {
     return ctx.next();
   }
   const cookies = getCookies(req.headers);
-  const otherCookies = getSetCookies(req.headers);
-  console.log("otherCookies = ", otherCookies);
   console.log("cookies = ", cookies);
   const { username } = cookies;
   const authUUID = cookies[`${username}`];
