@@ -62,7 +62,7 @@ export default function Login({ data }: PageProps<string | undefined>) {
           autofocus={true}
           autocomplete="off"
           required
-          class="text-xl text-white rounded bg-gray-900 border-2 border-gray-900 hover:border-gray-200"
+          class="text-xl text-white rounded-md bg-gray-900 border-2 rounded-md border-gray-900 hover:border-gray-200"
         />
         <input
           type="password"
@@ -70,12 +70,12 @@ export default function Login({ data }: PageProps<string | undefined>) {
           name="password"
           autocomplete="off"
           required
-          class="text-xl text-white rounded bg-gray-900 border-2 border-gray-900 hover:border-gray-200"
+          class="text-xl text-white rounded-md bg-gray-900 border-2 rounded-md border-gray-900 hover:border-gray-200"
         />
         <input
           type="submit"
           value="Login"
-          class="text-xl text-white rounded p-1 bg-gray-700 border-2 border-gray-900 hover:border-gray-200"
+          class="text-xl text-white rounded-md p-1 bg-gray-700 border-2 rounded-md border-gray-900 hover:border-gray-200"
           style="cursor: pointer;"
         />
       </form>

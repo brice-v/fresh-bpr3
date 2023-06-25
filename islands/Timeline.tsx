@@ -15,7 +15,7 @@ dayjs.extend(relativeTime);
 
 function PostView({ post }: PostViewProps) {
   return (
-    <div class="border-b border-gray-600 p-8">
+    <div class="border-b rounded-md border-gray-600 p-8">
       <div class="flex flex-col">
         <div class="flex flex-row gap-2 items-center">
           <div class="font-bold">{`@${post.author}`}</div>
