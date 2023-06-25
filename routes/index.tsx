@@ -7,12 +7,7 @@ export const handler: Handlers<string | undefined> = {
     const { username } = getCookies(req.headers);
     console.log("username", username);
     if (!username) {
-      const headers = new Headers();
-      headers.set("location", "/login");
-      return new Response(null, {
-        status: 302,
-        headers,
-      });
+      return Response.redirect("/login");
     }
     return ctx.render(username);
   },

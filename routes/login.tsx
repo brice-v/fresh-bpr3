@@ -1,6 +1,7 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { setCookie } from "std/http/cookie.ts";
-import { getBaseUrl } from "../utils/utils.ts";
+import { Cookie, setCookie } from "std/http/cookie.ts";
+import { login } from "../utils/db.ts";
+import { Username } from "../utils/constants.ts";
 
 export const handler: Handlers<string | undefined> = {
   async POST(req, ctx) {
@@ -11,26 +12,36 @@ export const handler: Handlers<string | undefined> = {
       const error = "Username or Password cannot be empty";
       return ctx.render(error);
     }
-    // TODO: Create api endpoint to authenticate user?
-
-    const resp = await fetch(
-      `${getBaseUrl(req)}/api/auth`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      },
-    );
-    console.log("resp", resp);
-    console.log("resp.json()", await resp.json());
-    if (resp.status !== 200) {
-      const error = "Failed to authenticate";
+    const resp = await login(username, password);
+    if (!resp) {
+      const error = "Failed to Login User";
       return ctx.render(error);
     }
-    // If its authenticated it returns the username as well as a token to use (thats stored in the DB as well?)
-
-    // This should be unreachable? If our auth method redirects and sets cookies
-    return ctx.render();
+    const url = new URL(req.url);
+    // If its authenticated it returns the username as well as a token to use (thats stored in the DB as well)
+    const headers = new Headers();
+    const defaultCookieArgs: Partial<Cookie> = {
+      maxAge: 60 * 60 * 4, // 4 Hours
+      sameSite: "Lax", // this is important to prevent CSRF attacks
+      domain: url.hostname,
+    };
+    // Set a cookie for the auth
+    setCookie(headers, {
+      name: resp.username,
+      value: resp.auth,
+      ...defaultCookieArgs,
+    });
+    // Set a cookie for the username
+    setCookie(headers, {
+      name: Username,
+      value: resp.username,
+      ...defaultCookieArgs,
+    });
+    headers.set("location", "/");
+    return new Response(null, {
+      status: 302,
+      headers,
+    });
   },
 };
 
