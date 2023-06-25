@@ -17,11 +17,13 @@ function PostView({ post }: PostViewProps) {
   return (
     <div class="border-b border-gray-600 p-8">
       <div class="flex flex-col">
-        <div class="font-bold">{`@${post.author}`}</div>
+        <div class="flex flex-row gap-2 items-center">
+          <div class="font-bold">{`@${post.author}`}</div>
+          <span class="text-sm">
+            {` · ${dayjs(post.timestamp).fromNow()}`}
+          </span>
+        </div>
         <span>{post.content}</span>
-        <span class="text-sm text-right">
-          {dayjs(new Date(post.timestamp)).fromNow()}
-        </span>
       </div>
     </div>
   );
