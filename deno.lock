@@ -1,6 +1,10 @@
 {
   "version": "2",
   "remote": {
+    "https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js": "b82d5eddd8b5da636bd48b116b3a1974b9655b6206a724792527c0464fae8b78",
+    "https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js": "9aeaf25ce3c591525c24ed5816686e2b25d89860d3d93615c62bc6d0c0a04738",
+    "https://cdn.skypack.dev/-/dayjs@v1.10.4-MoS2QVkxh1TZYPgJA5zq/dist=es2019,mode=imports/optimized/dayjs.js": "dee9268b49c5857a82cd2850b99c4a20a18d422fcde78af14c96576726c6fa14",
+    "https://cdn.skypack.dev/dayjs@1.10.4": "82b017b0a546c0fca76375450f0c113fa163729310888fb50e01936e8c1846e6",
     "https://deno.land/std@0.140.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
     "https://deno.land/std@0.140.0/_util/os.ts": "3b4c6e27febd119d36a416d7a97bd3b0251b77c88942c8f16ee5953ea13e2e49",
     "https://deno.land/std@0.140.0/fs/_util.ts": "0fb24eb4bfebc2c194fb1afdb42b9c3dda12e368f43e8f2321f84fc77d42cb0f",
@@ -245,6 +249,8 @@
     "https://esm.sh/@trpc/client@10.32.0?deps=@trpc/server": "0375bfcd089debeb63bc91ddcefb8b428d1ad6d640cd26de1d49daf03120fa93",
     "https://esm.sh/@trpc/server@10.32.0": "c150f5edaafbef3814b2bc6e791655b96aa3dc6194049aca2702a0b82c35848d",
     "https://esm.sh/@trpc/server@10.32.0/adapters/fetch": "b425e83696fa5c92bdc291316df611db4d7c4db15b10f134e46e2434f5b193e8",
+    "https://esm.sh/dayjs@1.11.8": "ddb58be6ebc0e7726546f5189fb76eff9a6e150dae514a3838053d45586a1a8f",
+    "https://esm.sh/dayjs@1.11.8/plugin/relativeTime": "8020e9acea2b9127632b49731445920eec2c2c7c1adbc0a5a248c8293e832184",
     "https://esm.sh/preact@10.11.0": "e888b244446037c56f1881173fb51d1f5fa7aae5599e6c5154619346a6a5094e",
     "https://esm.sh/preact@10.11.0/hooks": "2b8ec155eb8b87501663f074acff1d55a9114fa7d88f0b39da06c940af1ff736",
     "https://esm.sh/preact@10.11.0/jsx-runtime": "5c123264f19799ab243211132dded45f6d42d594b5c78dd585f947d07bf20eae",
@@ -265,6 +271,8 @@
     "https://esm.sh/v126/@trpc/server@10.32.0/denonext/observable.js": "c973623ef1cbd9bf7790d8d7df33917dab02dce3a21940b4f2bc915f4ac2cef2",
     "https://esm.sh/v126/@trpc/server@10.32.0/denonext/server.mjs": "42e02387a50f4bf4dffe6ff3b6f54663cee5c10ecfdc9f72acbde8c0bd3f19b4",
     "https://esm.sh/v126/@trpc/server@10.32.0/denonext/shared.js": "e60b18f6524bbc33d223f16e8a3cfe93048fda0c3b6603e4b51dda631932acc1",
+    "https://esm.sh/v126/dayjs@1.11.8/denonext/dayjs.mjs": "7a5683dfb5bf80c79ff84a1780bede0c2af690ca450ba4064b2669eb0a43c0e0",
+    "https://esm.sh/v126/dayjs@1.11.8/denonext/plugin/relativeTime.js": "a67356e5ed06307718ee5f70e0cfdfbc745a2bdab2cb99c31fc2d8b4c4759150",
     "https://esm.sh/v89/@babel/runtime@7.22.3/X-ZC9AdHJwYy9zZXJ2ZXJAMTAuMC4wLWFscGhhLjIy/denonext/helpers/assertThisInitialized.js": "c74c7b90809168a5a4031514d6d725d9e71e2b2d06e278310c3170dd2d781d52",
     "https://esm.sh/v89/@babel/runtime@7.22.3/X-ZC9AdHJwYy9zZXJ2ZXJAMTAuMC4wLWFscGhhLjIy/denonext/helpers/classCallCheck.js": "7db6b72b7a2f01d08ae90ecf5a89777123a3f0fe2a42a9c880a9d744dc436917",
     "https://esm.sh/v89/@babel/runtime@7.22.3/X-ZC9AdHJwYy9zZXJ2ZXJAMTAuMC4wLWFscGhhLjIy/denonext/helpers/createClass.js": "7d3146c415f9ee7046bd87d60cdc116f617fe4a8a5668f114bb8c4d72e88bba7",

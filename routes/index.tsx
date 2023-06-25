@@ -1,6 +1,7 @@
-import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { getCookies } from "std/http/cookie.ts";
+import Timeline from "../islands/Timeline.tsx";
+import CreatePostWizard from "../islands/CreatePostWizard.tsx";
 
 export const handler: Handlers<string | undefined> = {
   GET(req, ctx) {
@@ -16,10 +17,8 @@ export const handler: Handlers<string | undefined> = {
 export default function Home({ data }: PageProps<string>) {
   return (
     <>
-      <Head>
-        <title>bpr</title>
-      </Head>
-      <h1>Username found! -- {data} --</h1>
+      <CreatePostWizard author={data} />
+      <Timeline author={data} />
     </>
   );
 }

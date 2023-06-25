@@ -25,3 +25,9 @@ export enum EnvVars {
   UpstashRedisRestURL = "UPSTASH_REDIS_REST_URL",
   UpstashRedisRestToken = "UPSTASH_REDIS_REST_TOKEN",
 }
+
+export type Post = {
+  author: string;
+  content: string;
+  timestamp: Date;
+};
