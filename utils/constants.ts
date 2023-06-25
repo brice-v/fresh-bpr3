@@ -19,3 +19,9 @@ export enum RedisKeys {
   Users = "users",
   NextUserId = "next_user_id",
 }
+
+export enum EnvVars {
+  BprDevMode = "BPR_DEV_MODE",
+  UpstashRedisRestURL = "UPSTASH_REDIS_REST_URL",
+  UpstashRedisRestToken = "UPSTASH_REDIS_REST_TOKEN",
+}

@@ -48,30 +48,41 @@ export const handler: Handlers<string | undefined> = {
 export default function Login({ data }: PageProps<string | undefined>) {
   return (
     <>
-      <h1>bpr login!</h1>
-      <p>
-        bpr is a platform where you can post messages on a timeline and follow
-        what others are saying!
-      </p>
-      {data && <span>{data}</span>}
-      <form method="post">
-        <input
-          type="text"
-          placeholder="Enter username..."
-          name="username"
-          autofocus={true}
-          autocomplete="off"
-          required
-        />
-        <input
-          type="password"
-          placeholder="Enter password..."
-          name="password"
-          autocomplete="off"
-          required
-        />
-        <input type="submit" value="Login" />
-      </form>
+      <div class="bg-gray-900 h-screen w-screen flex justify-center">
+        <div class="bg-gray-800 h-screen w-1/2 flex flex-col items-center gap-5 ">
+          <h1 class="text-2xl text-white">bpr login!</h1>
+          <p class="text-white">
+            bpr is a platform where you can post messages on a timeline and
+            follow what others are saying!
+          </p>
+          {data && <span>{data}</span>}
+          <form method="post" class="flex flex-col gap-2">
+            <input
+              type="text"
+              placeholder="Enter username..."
+              name="username"
+              autofocus={true}
+              autocomplete="off"
+              required
+              class="text-xl text-white rounded bg-gray-900 border-2 border-gray-900 hover:border-gray-200"
+            />
+            <input
+              type="password"
+              placeholder="Enter password..."
+              name="password"
+              autocomplete="off"
+              required
+              class="text-xl text-white rounded bg-gray-900 border-2 border-gray-900 hover:border-gray-200"
+            />
+            <input
+              type="submit"
+              value="Login"
+              class="text-xl text-white rounded p-1 bg-gray-700 border-2 border-gray-900 hover:border-gray-200"
+              style="cursor: pointer;"
+            />
+          </form>
+        </div>
+      </div>
     </>
   );
 }

@@ -5,7 +5,7 @@ import { getCookies } from "std/http/cookie.ts";
 export const handler: Handlers<string | undefined> = {
   GET(req, ctx) {
     const { username } = getCookies(req.headers);
-    console.log("username", username);
+    console.log("index::GET::handler: username", username);
     if (!username) {
       return Response.redirect("/login");
     }
