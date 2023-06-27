@@ -4,12 +4,12 @@ export type AuthToken = {
 } | null;
 
 export enum TRPCQuery {
-  Login = "login",
-  IsValidUser = "isValidUser",
+  GetPostsByUser = "getPostByUser",
 }
 
 export enum TRPCMutation {
   CreateUser = "createUser",
+  CreatePost = "createPost",
 }
 
 export const Username = "username";
@@ -18,6 +18,7 @@ export enum RedisKeys {
   Auths = "auths",
   Users = "users",
   NextUserId = "next_user_id",
+  NextPostId = "next_post_id",
 }
 
 export enum EnvVars {

@@ -1,6 +1,6 @@
 import { Redis } from "@upstash/redis";
 import * as bcrypt from "@bcrypt";
-import { AuthToken, EnvVars, RedisKeys } from "./constants.ts";
+import { AuthToken, EnvVars, Post, RedisKeys } from "./constants.ts";
 import { ENV, isDevMode } from "./utils.ts";
 
 const redis = new Redis({
@@ -73,6 +73,27 @@ export async function isValidUser(
   );
   // Verify the 2 match then return true
   return authUserId === userId;
+}
+
+export async function createNewPost(post: Post): Promise<number | undefined> {
+  // increment next_post_id
+  const postId = await redis.incr(RedisKeys.NextPostId);
+  // Get user id from post.author
+  const userId = await redis.hget<number>(RedisKeys.Users, post.author);
+  // set a new post:postId authorId timestamp (as number) content
+  const postsUpdate = await redis.hset(`posts:${postId}`, {
+    userId: userId,
+    timestamp: post.timestamp.getTime(),
+    content: post.content,
+  });
+  if (postsUpdate !== 3) {
+    console.error(
+      "db::createNewPost: postsUpdate was not 3, got =",
+      postsUpdate,
+    );
+    return;
+  }
+  return postId;
 }
 
 export async function createNewUser(username: string, password: string) {
