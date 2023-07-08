@@ -1,7 +1,7 @@
 import { router } from "@trpc/server";
 import { z } from "zod";
-import { TRPCMutation } from "./utils/constants.ts";
-import { createNewPost } from "./utils/db.ts";
+import { Post, TRPCMutation } from "./utils/constants.ts";
+import { createNewPost } from "./db/db.ts";
 
 export const appRouter = router()
   // .query(TRPCQuery.GetPostsByUser, {
@@ -19,7 +19,12 @@ export const appRouter = router()
       timestamp: z.date(),
     }).required(),
     async resolve({ input }) {
-      return await createNewPost(input);
+      const post: Post = {
+        author: input.author,
+        content: input.content,
+        timestamp: input.timestamp,
+      };
+      return await createNewPost(post);
     },
   });
 

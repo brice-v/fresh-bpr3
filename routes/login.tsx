@@ -1,6 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Cookie, setCookie } from "std/http/cookie.ts";
-import { login } from "../utils/db.ts";
+import { login } from "../db/db.ts";
 import { Username } from "../utils/constants.ts";
 
 export const handler: Handlers<string | undefined> = {

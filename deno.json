@@ -1,7 +1,8 @@
 {
   "tasks": {
     "start": "deno run -A --watch=static/,routes/ dev.ts",
-    "new-user": "deno run -A scripts/new-user.ts"
+    "new-user": "deno run -A scripts/new-user.ts",
+    "migrate": "deno run -A scripts/migrate.ts"
   },
   "importMap": "./import_map.json",
   "compilerOptions": {

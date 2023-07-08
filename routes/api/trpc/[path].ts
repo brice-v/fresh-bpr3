@@ -4,7 +4,7 @@ import { appRouter } from "../../../router.ts";
 import { getBaseUrl } from "../../../utils/utils.ts";
 import { FetchCreateContextFnOptions } from "@trpc/server/adapters/fetch";
 import { getCookies } from "std/http/cookie.ts";
-import { isValidUser } from "../../../utils/db.ts";
+import { isValidUser } from "../../../db/db.ts";
 
 async function createContext({
   req,

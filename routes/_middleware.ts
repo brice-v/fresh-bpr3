@@ -1,7 +1,7 @@
 import { MiddlewareHandlerContext } from "$fresh/server.ts";
 import { getCookies } from "std/http/cookie.ts";
 import { getBaseUrl } from "../utils/utils.ts";
-import { isValidUser } from "../utils/db.ts";
+import { isValidUser } from "../db/db.ts";
 
 export async function handler(req: Request, ctx: MiddlewareHandlerContext) {
   const url = new URL(req.url);

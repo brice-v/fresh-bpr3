@@ -14,17 +14,11 @@ export enum TRPCMutation {
 
 export const Username = "username";
 
-export enum RedisKeys {
-  Auths = "auths",
-  Users = "users",
-  NextUserId = "next_user_id",
-  NextPostId = "next_post_id",
-}
-
 export enum EnvVars {
   BprDevMode = "BPR_DEV_MODE",
-  UpstashRedisRestURL = "UPSTASH_REDIS_REST_URL",
-  UpstashRedisRestToken = "UPSTASH_REDIS_REST_TOKEN",
+  PlanetscaleHost = "DATABASE_HOST",
+  PlanetscaleUsername = "DATABASE_USERNAME",
+  PlanetscalePassword = "DATABASE_PASSWORD",
 }
 
 export type Post = {

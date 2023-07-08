@@ -1,3 +1,3 @@
-import { createNewUser } from "../utils/db.ts";
+import { createNewUser } from "../db/db.ts";
 
 createNewUser("brice", "test");
